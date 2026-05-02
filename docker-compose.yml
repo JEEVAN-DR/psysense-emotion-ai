@@ -1,0 +1,80 @@
+version: "3.9"
+
+services:
+  # ── FastAPI inference service ──────────────────────────────────────────────
+  api:
+    build: .
+    container_name: psysense-api
+    ports:
+      - "8000:8000"
+    environment:
+      - HOME=/app
+      - TRANSFORMERS_CACHE=/app/.cache/transformers
+      - HF_HOME=/app/.cache/huggingface
+      - MPLCONFIGDIR=/app/.cache/matplotlib
+      - HF_MODEL_ID=model   # ← add this line to point to local model folder
+    volumes:
+      # Mount model directory so weights are not baked into the image during dev
+      - ./model:/app/model:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+  
+  # ... rest of services unchanged
+
+  # ── Prometheus ─────────────────────────────────────────────────────────────
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: psysense-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
+    restart: unless-stopped
+
+  # ── Grafana ────────────────────────────────────────────────────────────────
+  grafana:
+    image: grafana/grafana:10.4.2
+    container_name: psysense-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  # ── MLflow tracking server ─────────────────────────────────────────────────
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.9.0
+    container_name: psysense-mlflow
+    ports:
+      - "5000:5000"
+    command: >
+      mlflow server
+        --host 0.0.0.0
+        --port 5000
+        --default-artifact-root /mlflow/artifacts
+        --backend-store-uri sqlite:////mlflow/mlflow.db
+    volumes:
+      - mlflow_data:/mlflow
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
+  grafana_data:
+  mlflow_data:

@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model weights and checkpoints
+checkpoint-*/
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# HuggingFace cache
+.cache/
+.huggingface/
+
+# Training artifacts
+runs/
+logs/
+events.out.tfevents*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Data files (if any later)
+data/
+datasets/
+
+# Test and coverage artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+*.egg-info/
+
+# Docker build context cache
+.dockerignore
+
+# MLflow artifacts
+mlruns/
+mlartifacts/
+
+# Load test results
+load_test_results*.csv
+
+# Environment files (never commit secrets)
+.env
