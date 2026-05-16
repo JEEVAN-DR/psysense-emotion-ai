@@ -25,7 +25,7 @@ Unlike traditional sentiment analysis models that predict a single label such as
 
 The model is based on DistilBERT and the GoEmotions emotion taxonomy, with support for threshold-controlled multi-label predictions and interactive visual analysis.
 
-Built by **Jeevan D R**, a **Top 1% Student** focused on applied AI, NLP, and production-ready machine learning tools.
+Built by **Jeevan D R** focused on applied AI, NLP, and production-ready machine learning tools.
 
 ## Key Features
 
