@@ -1,4 +1,30 @@
-# GoEmotions Emotion Classifier - DistilBERT Multi-Label NLP
+---
+title: GO Emotion Classifier
+emoji: 🧠
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+pinned: false
+license: mit
+---
+
+# 🧠 GO Emotion Classifier — Multi-Label Emotion Detection
+
+<div align="center">
+
+**Transformer-based emotion intelligence app that detects dominant and secondary emotions from text with confidence scores, visual breakdowns, and supportive next-step suggestions.**
+
+[![CI/CD](https://github.com/JEEVAN-DR/psysense-emotion-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/JEEVAN-DR/psysense-emotion-ai/actions)
+[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-blue?style=for-the-badge&logo=streamlit)](https://psysense-emotion-ai-g8ugdajqqquupqjjpxqfiz.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/JEEVAN-DR/psysense-emotion-ai)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Model](https://img.shields.io/badge/Model-DistilBERT-orange?style=for-the-badge)](https://huggingface.co/)
+
+*Enter text, analyze emotional signals, and view multi-label emotion probabilities powered by DistilBERT and the GoEmotions taxonomy.*
+
+</div>
+
+---
 
 ## Overview
 
@@ -139,4 +165,4 @@ Mysuru, India
 
 ## License
 
-Add a license before distributing or accepting external contributions.
+MIT License.
