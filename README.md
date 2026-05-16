@@ -35,10 +35,6 @@ Built by **Jeevan D R**, a **Top 1% Student** focused on applied AI, NLP, and pr
 * Confidence-based ranking of emotions
 * Threshold-controlled emotion activation
 * Real-time prediction using Streamlit
-* Transformer-based inference with HuggingFace Transformers
-* Interactive emotion probability visualization
-* FastAPI service for production-style inference
-* Docker, Prometheus, Grafana, and MLflow support
 
 ## Model Details
 
@@ -117,8 +113,6 @@ psysense-emotion-ai/
 |-- api/                    # FastAPI service
 |-- model/
 |   `-- label_encoder.pkl
-|-- monitoring/             # Prometheus configuration
-|-- k8s/                    # Kubernetes manifests
 |-- requirements.txt
 |-- requirements-prod.txt
 |-- Dockerfile
@@ -150,7 +144,6 @@ psysense-emotion-ai/
 ## Author
 
 **Jeevan D R**  
-Top 1% Student  
 AI & NLP Developer - Emotion Recognition  
 Mysuru, India
 
