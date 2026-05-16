@@ -150,9 +150,9 @@ psysense-emotion-ai/
 
 ## 👨‍💻 Author
 
-**Hitan K**
-AI/ML Engineer — NLP & Emotion Recognition
-Bengaluru, India
+**Jeevan D R**
+Software Engineer — NLP & Emotion Recognition
+Mysuru, India
 
 ---
 
