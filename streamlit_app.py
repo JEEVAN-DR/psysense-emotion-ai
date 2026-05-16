@@ -129,7 +129,6 @@ with st.sidebar:
         </div>
         <div class="sidebar-section-title">Profile</div>
         <ul class="sidebar-list">
-            <li>Top 1% student</li>
             <li>Transformer-based NLP</li>
             <li>Multi-label emotion classification</li>
             <li>Streamlit and FastAPI deployment</li>
