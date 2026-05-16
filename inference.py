@@ -12,7 +12,7 @@ from transformers import (
 )
 
 # ── Paths ─────────────────────────────────────────────────────
-HF_MODEL        = os.getenv("HF_MODEL_ID") or os.getenv("HF_MODEL") or "JEEVAN-DR/psysense-emotion-ai"
+HF_MODEL        = os.getenv("HF_MODEL_ID") or os.getenv("HF_MODEL") or "Hitan2004/psysense-emotion-ai"
 BASE_DIR        = os.path.dirname(__file__)
 LOCAL_LABEL_ENC = os.path.join(BASE_DIR, "model", "label_encoder.pkl")
 

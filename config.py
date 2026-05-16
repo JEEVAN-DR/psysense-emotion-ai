@@ -20,7 +20,11 @@ class Settings(BaseSettings):
     )
 
     # ── Model ──────────────────────────────────────────────────────────────
-    hf_model: str = os.getenv("HF_MODEL_ID", "JEEVAN-DR/psysense-emotion-ai")
+    hf_model: str = (
+        os.getenv("HF_MODEL_ID")
+        or os.getenv("HF_MODEL")
+        or "Hitan2004/psysense-emotion-ai"
+    )
     model_threshold: float = 0.10
     model_top_k: int = 10
     label_encoder_path: str = os.path.join(
