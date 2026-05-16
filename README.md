@@ -1,12 +1,3 @@
----
-title: GO Emotion Classifier
-emoji: 🧠
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-pinned: false
-license: mit
----
 
 # 🧠 GO Emotion Classifier — Multi-Label Emotion Detection
 
