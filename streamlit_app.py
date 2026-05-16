@@ -13,6 +13,84 @@ st.markdown(
     header {visibility: hidden;}
     footer {visibility: hidden;}
     .viewerBadge_container__1QSob {display: none;}
+
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    }
+
+    [data-testid="stSidebar"] * {
+        color: #f8fafc;
+    }
+
+    .profile-card {
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 8px;
+        padding: 18px;
+        background: rgba(15, 23, 42, 0.72);
+        margin-bottom: 18px;
+    }
+
+    .profile-initials {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2563eb;
+        color: white;
+        font-size: 26px;
+        font-weight: 800;
+        margin-bottom: 14px;
+    }
+
+    .profile-name {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 4px;
+    }
+
+    .profile-role {
+        color: #93c5fd;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .profile-copy {
+        color: #cbd5e1;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .profile-badge {
+        display: inline-block;
+        border: 1px solid rgba(96, 165, 250, 0.45);
+        border-radius: 999px;
+        padding: 5px 10px;
+        color: #bfdbfe;
+        font-size: 13px;
+        font-weight: 700;
+        margin: 8px 0 12px;
+    }
+
+    .sidebar-section-title {
+        color: #93c5fd;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-top: 18px;
+        margin-bottom: 8px;
+    }
+
+    .sidebar-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 14px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -35,6 +113,42 @@ def get_model():
 
 model, tokenizer, mlb, device = get_model()
 label_names = list(mlb.classes_)
+
+with st.sidebar:
+    st.markdown(
+        """
+        <div class="profile-card">
+            <div class="profile-initials">JD</div>
+            <div class="profile-name">Jeevan D R</div>
+            <div class="profile-role">Top 1% Student | AI & NLP Developer</div>
+            <div class="profile-badge">GoEmotions Emotion AI</div>
+            <div class="profile-copy">
+                Building practical machine learning tools for emotion-aware
+                text understanding, human-computer interaction, and applied NLP.
+            </div>
+        </div>
+        <div class="sidebar-section-title">Profile</div>
+        <ul class="sidebar-list">
+            <li>Top 1% student</li>
+            <li>Transformer-based NLP</li>
+            <li>Multi-label emotion classification</li>
+            <li>Streamlit and FastAPI deployment</li>
+        </ul>
+        <div class="sidebar-section-title">Project</div>
+        <ul class="sidebar-list">
+            <li>28 emotion labels</li>
+            <li>DistilBERT inference</li>
+            <li>Confidence visualization</li>
+            <li>Emotion-aware suggestions</li>
+        </ul>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.link_button(
+        "GitHub Repository",
+        "https://github.com/JEEVAN-DR/psysense-emotion-ai",
+        use_container_width=True,
+    )
 
 st.markdown(
     """

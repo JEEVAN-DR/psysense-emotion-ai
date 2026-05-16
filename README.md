@@ -8,6 +8,8 @@ Unlike traditional sentiment analysis models that predict a single label such as
 
 The model is based on DistilBERT and the GoEmotions emotion taxonomy, with support for threshold-controlled multi-label predictions and interactive visual analysis.
 
+Built by **Jeevan D R**, a **Top 1% Student** focused on applied AI, NLP, and production-ready machine learning tools.
+
 ## Key Features
 
 * Multi-label emotion detection across 28 emotions
@@ -84,10 +86,10 @@ set HF_MODEL_ID=JEEVAN-DR/psysense-emotion-ai
 The default model ID in the code is:
 
 ```text
-JEEVAN-DR/psysense-emotion-ai
+Hitan2004/psysense-emotion-ai
 ```
 
-Before deploying publicly, upload the trained model weights to Jeevan's own HuggingFace account or update `HF_MODEL_ID` to the correct model repository.
+This fallback keeps the Streamlit app running until Jeevan uploads his own trained model weights. To make the deployment fully use Jeevan's HuggingFace model, create `JEEVAN-DR/psysense-emotion-ai` on HuggingFace and set `HF_MODEL_ID` to that repository in Streamlit Cloud.
 
 ## Project Structure
 
@@ -131,7 +133,8 @@ psysense-emotion-ai/
 ## Author
 
 **Jeevan D R**  
-Software Engineer - NLP & Emotion Recognition  
+Top 1% Student  
+AI & NLP Developer - Emotion Recognition  
 Mysuru, India
 
 ## License
