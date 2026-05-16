@@ -1,5 +1,5 @@
 """
-PsySense Emotion AI — FastAPI inference service.
+GoEmotions Emotion Classifier - FastAPI inference service.
 
 Endpoints
 ---------
@@ -40,7 +40,7 @@ logging.basicConfig(
     format='{"time": "%(asctime)s", "level": "%(levelname)s", "logger": "%(name)s", "message": "%(message)s"}',
     datefmt="%Y-%m-%dT%H:%M:%S",
 )
-logger = logging.getLogger("psysense.api")
+logger = logging.getLogger("emotion_classifier.api")
 
 # ── Lifespan ──────────────────────────────────────────────────────────────────
 
@@ -48,26 +48,26 @@ logger = logging.getLogger("psysense.api")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Warm up the model at startup so the first request is not slow."""
-    logger.info("Starting PsySense Emotion AI API (env=%s) …", settings.environment)
+    logger.info("Starting GoEmotions Emotion Classifier API (env=%s)", settings.environment)
     loop = asyncio.get_event_loop()
     await loop.run_in_executor(None, get_model_bundle)
     logger.info("Model warm-up complete.")
     yield
-    logger.info("Shutting down PsySense Emotion AI API.")
+    logger.info("Shutting down Emotion Classifier API.")
 
 
 # ── Application ───────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="PsySense Emotion AI API",
+    title="GoEmotions Emotion Classifier API",
     description=(
         "Production-grade inference API for multi-label emotion classification "
         "using a DistilBERT model fine-tuned on the GoEmotions dataset."
     ),
     version="1.0.0",
     contact={
-        "name": "Hitan K",
-        "url": "https://github.com/Hitan547/psysense-emotion-ai",
+        "name": "Jeevan D R",
+        "url": "https://github.com/JEEVAN-DR/psysense-emotion-ai",
     },
     license_info={"name": "MIT"},
     lifespan=lifespan,

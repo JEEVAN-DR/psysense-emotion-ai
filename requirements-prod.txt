@@ -1,4 +1,4 @@
-# Production dependencies for the PsySense Emotion AI FastAPI service.
+# Production dependencies for the GoEmotions Emotion Classifier FastAPI service.
 # Pin versions to ensure reproducible builds.
 
 # ── Inference ──────────────────────────────────────────────────────────────────

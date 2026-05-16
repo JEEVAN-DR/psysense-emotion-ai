@@ -1,5 +1,5 @@
 """
-Pydantic request / response models for the PsySense Emotion AI API.
+Pydantic request / response models for the GoEmotions Emotion Classifier API.
 """
 from __future__ import annotations
 

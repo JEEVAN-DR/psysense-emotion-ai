@@ -1,1 +1,1 @@
-# PsySense Emotion AI — FastAPI package
+# GoEmotions Emotion Classifier - FastAPI package

@@ -10,10 +10,10 @@ RUN pip install --upgrade pip \
 
 # ── Stage 2: runtime ──────────────────────────────────────────────────────────
 FROM python:3.11-slim AS runtime
-LABEL maintainer="Hitan K <hitank2004@gmail.com>"
-LABEL org.opencontainers.image.title="PsySense Emotion AI API"
+LABEL maintainer="Jeevan D R"
+LABEL org.opencontainers.image.title="GoEmotions Emotion Classifier API"
 LABEL org.opencontainers.image.description="Production FastAPI service for multi-label emotion classification"
-LABEL org.opencontainers.image.source="https://github.com/Hitan547/psysense-emotion-ai"
+LABEL org.opencontainers.image.source="https://github.com/JEEVAN-DR/psysense-emotion-ai"
 
 WORKDIR /app
 COPY --from=builder /install /usr/local

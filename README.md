@@ -1,143 +1,125 @@
-# 🧠 GoEmotions Emotion Classifier — DistilBERT Multi-Label NLP
+# GoEmotions Emotion Classifier - DistilBERT Multi-Label NLP
 
-🔗 **Live Demo:**
-https://psysense-emotion-ai-75rqc6axets9shtwledjui.streamlit.app/
+## Overview
 
----
+This project is a Transformer-based Natural Language Processing system that detects multiple simultaneous human emotions from text.
 
-## 📌 Overview
+Unlike traditional sentiment analysis models that predict a single label such as positive or negative, this application performs multi-label emotion classification. It identifies dominant and secondary emotions with confidence scores.
 
-**PsySense** is a Transformer-based Natural Language Processing system that detects **multiple simultaneous human emotions from text**.
+The model is based on DistilBERT and the GoEmotions emotion taxonomy, with support for threshold-controlled multi-label predictions and interactive visual analysis.
 
-Unlike traditional sentiment analysis models that predict a single label (positive/negative), PsySense performs **multi-label emotion classification**, identifying both **dominant and secondary emotions with confidence scores**.
+## Key Features
 
-The model is fine-tuned on Google’s **GoEmotions dataset** using **DistilBERT** with **class-weighted Binary Cross-Entropy Loss** to handle class imbalance and real-world emotional overlap.
-
----
-
-## 🚀 Key Features
-
-* Multi-label emotion detection (28 emotions)
+* Multi-label emotion detection across 28 emotions
 * Dominant emotion identification
 * Secondary emotion detection
 * Confidence-based ranking of emotions
 * Threshold-controlled emotion activation
-* Real-time prediction using Streamlit UI
-* Transformer fine-tuning with HuggingFace
-* Class imbalance handling using weighted BCE loss
+* Real-time prediction using Streamlit
+* Transformer-based inference with HuggingFace Transformers
 * Interactive emotion probability visualization
+* FastAPI service for production-style inference
+* Docker, Prometheus, Grafana, and MLflow support
 
----
+## Model Details
 
-## 🧠 Model Details
+* Base Model: DistilBERT uncased
+* Task: Multi-label emotion classification
+* Dataset: GoEmotions
+* Number of Labels: 28 emotions
+* Loss Function: Binary Cross-Entropy with logits
+* Max Sequence Length: 128 tokens
 
-* **Base Model:** DistilBERT (uncased)
-* **Task:** Multi-Label Emotion Classification
-* **Dataset:** GoEmotions (Google Research)
-* **Number of Labels:** 28 emotions
-* **Loss Function:** BCEWithLogitsLoss (with class weights)
-* **Evaluation Metrics:** Micro-F1, Macro-F1
-* **Max Sequence Length:** 128 tokens
+## Example Prediction
 
----
+Input:
 
-## 📊 Example Prediction
-
-**Input**
-
-```
+```text
 I love you but I am scared
 ```
 
-**Output**
+Output:
 
-```
-Dominant Emotion: Love (82%)
+```text
+Dominant Emotion: love
 
 Other Detected Emotions:
-• Fear — 67%  
-• Nervousness — 41%  
+- fear
+- nervousness
 
-Emotion Probability Distribution shown as bar graph.
+Emotion Probability Distribution shown as a bar chart.
 ```
 
----
-
-## 🌐 Live Deployment
-
-The model is deployed as an interactive web application using **Streamlit Cloud**.
-
-Users can enter text and instantly receive:
-
-* Dominant emotion
-* Secondary emotions
-* Confidence scores
-* Emotion probability graph
-
----
-
-## ⚙️ Run Locally
+## Run Locally
 
 Clone the repository:
 
-```
-git clone https://github.com/Hitan2004/psysense-emotion-ai.git
+```bash
+git clone https://github.com/JEEVAN-DR/psysense-emotion-ai.git
 cd psysense-emotion-ai
 ```
 
 Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-Run Streamlit app:
+Run the Streamlit app:
 
-```
+```bash
 streamlit run streamlit_app.py
 ```
 
----
+## Model Weights
 
-## 🤖 Model Weights
+Model weights are loaded from HuggingFace Hub during inference. Set `HF_MODEL_ID` to the HuggingFace model repository that contains the trained DistilBERT weights.
 
-Model weights are hosted on **HuggingFace Hub** and will be automatically downloaded during inference.
+Example:
 
-HuggingFace Model:
-`Hitan2004/psysense-emotion-ai`
-
----
-
-## 📂 Project Structure
-
+```bash
+set HF_MODEL_ID=JEEVAN-DR/psysense-emotion-ai
 ```
+
+The default model ID in the code is:
+
+```text
+JEEVAN-DR/psysense-emotion-ai
+```
+
+Before deploying publicly, upload the trained model weights to Jeevan's own HuggingFace account or update `HF_MODEL_ID` to the correct model repository.
+
+## Project Structure
+
+```text
 psysense-emotion-ai/
-│
-├── streamlit_app.py        # Streamlit UI  
-├── inference.py            # Prediction pipeline  
-├── model/
-│   └── label_encoder.pkl  
-├── requirements.txt  
-├── README.md  
-└── .gitignore  
+|-- streamlit_app.py        # Streamlit UI
+|-- inference.py            # Prediction pipeline
+|-- api/                    # FastAPI service
+|-- model/
+|   `-- label_encoder.pkl
+|-- monitoring/             # Prometheus configuration
+|-- k8s/                    # Kubernetes manifests
+|-- requirements.txt
+|-- requirements-prod.txt
+|-- Dockerfile
+`-- README.md
 ```
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 * Python
 * PyTorch
 * HuggingFace Transformers
 * Streamlit
+* FastAPI
 * Scikit-learn
 * NumPy
 * Pandas
 * Matplotlib
+* Docker
 
----
-
-## 🎯 Use Cases
+## Use Cases
 
 * Emotion-aware conversational AI
 * Mental health text analysis tools
@@ -146,14 +128,12 @@ psysense-emotion-ai/
 * Customer feedback emotion detection
 * Affective computing research
 
----
+## Author
 
-## 👨‍💻 Author
-
-**Jeevan D R**
-Software Engineer — NLP & Emotion Recognition
+**Jeevan D R**  
+Software Engineer - NLP & Emotion Recognition  
 Mysuru, India
 
----
+## License
 
-⭐ If you found this project interesting, consider giving it a star.
+Add a license before distributing or accepting external contributions.

@@ -1,5 +1,5 @@
 """
-Load testing for the PsySense Emotion AI API using Locust.
+Load testing for the GoEmotions Emotion Classifier API using Locust.
 
 Run with:
     locust -f load_test.py --host=http://localhost:8000

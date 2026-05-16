@@ -1,5 +1,5 @@
 """
-MLflow model registry integration for PsySense Emotion AI.
+MLflow model registry integration for the GoEmotions Emotion Classifier.
 
 Usage
 -----
@@ -31,7 +31,7 @@ logger = logging.getLogger("psysense.mlflow")
 # ── Wrapper class so MLflow can serve via pyfunc ──────────────────────────────
 
 class EmotionModelWrapper(mlflow.pyfunc.PythonModel):
-    """MLflow PythonModel wrapper for the PsySense emotion classifier."""
+    """MLflow PythonModel wrapper for the emotion classifier."""
 
     def load_context(self, context):
         import pickle

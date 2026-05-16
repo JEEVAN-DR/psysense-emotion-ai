@@ -1,1 +1,1 @@
-# PsySense Emotion AI — test package
+# GoEmotions Emotion Classifier - test package
