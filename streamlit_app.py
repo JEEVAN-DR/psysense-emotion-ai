@@ -120,7 +120,7 @@ with st.sidebar:
         <div class="profile-card">
             <div class="profile-initials">JD</div>
             <div class="profile-name">Jeevan D R</div>
-            <div class="profile-role">Top 1% Student | AI & NLP Developer</div>
+            <div class="profile-role"> AI & NLP Developer</div>
             <div class="profile-badge">GoEmotions Emotion AI</div>
             <div class="profile-copy">
                 Building practical machine learning tools for emotion-aware
